@@ -83,6 +83,8 @@
             writing-mode: vertical-rl;
             text-orientation: mixed;
         }
+        .hidden-lang { display: none; }
+        .visible-lang { display: block; }
     </style>
 </head>
 <body class="bg-surface text-on-surface font-body selection:bg-secondary-container selection:text-on-secondary-container">
@@ -90,25 +92,37 @@
 <header class="sticky top-4 mx-auto w-[95%] rounded-full px-6 py-3 z-50 bg-white/70 dark:bg-[#000340]/70 backdrop-blur-xl shadow-[0_20px_40px_rgba(0,3,64,0.06)] dark:shadow-none flex justify-between items-center max-w-7xl">
 <a class="text-2xl font-black tracking-widest text-[#000340] dark:text-[#fbf9f8] font-headline" href="index.html">Venthus</a>
 <nav class="hidden md:flex items-center space-x-8">
-<a class="font-headline font-bold tracking-tight text-sm uppercase text-[#3b6a11] dark:text-[#3b6a11] font-extrabold border-b-2 border-[#3b6a11] pb-1" href="index.html">Αρχική</a>
-<a class="font-headline font-bold tracking-tight text-sm uppercase text-[#000340] dark:text-[#fbf9f8] opacity-80 hover:opacity-100 transition-opacity hover:scale-105 hover:text-[#3b6a11]" href="services.html">Υπηρεσίες</a>
-<a class="font-headline font-bold tracking-tight text-sm uppercase text-[#000340] dark:text-[#fbf9f8] opacity-80 hover:opacity-100 transition-opacity hover:scale-105 hover:text-[#3b6a11]" href="portfolio.html">Portfolio</a>
-<a class="font-headline font-bold tracking-tight text-sm uppercase text-[#000340] dark:text-[#fbf9f8] opacity-80 hover:opacity-100 transition-opacity hover:scale-105 hover:text-[#3b6a11]" href="contact.html">Επικοινωνία</a>
+<a class="font-headline font-bold tracking-tight text-sm uppercase text-[#3b6a11] dark:text-[#3b6a11] font-extrabold border-b-2 border-[#3b6a11] pb-1" href="index.html" data-lang="el">Αρχική</a>
+<a class="font-headline font-bold tracking-tight text-sm uppercase text-[#3b6a11] dark:text-[#3b6a11] font-extrabold border-b-2 border-[#3b6a11] pb-1 hidden-lang" href="index.html" data-lang="en">Home</a>
+<a class="font-headline font-bold tracking-tight text-sm uppercase text-[#000340] dark:text-[#fbf9f8] opacity-80 hover:opacity-100 transition-opacity hover:scale-105 hover:text-[#3b6a11]" href="services.html" data-lang="el">Υπηρεσίες</a>
+<a class="font-headline font-bold tracking-tight text-sm uppercase text-[#000340] dark:text-[#fbf9f8] opacity-80 hover:opacity-100 transition-opacity hover:scale-105 hover:text-[#3b6a11] hidden-lang" href="services.html" data-lang="en">Services</a>
+<a class="font-headline font-bold tracking-tight text-sm uppercase text-[#000340] dark:text-[#fbf9f8] opacity-80 hover:opacity-100 transition-opacity hover:scale-105 hover:text-[#3b6a11]" href="portfolio.html" data-lang="el">Portfolio</a>
+<a class="font-headline font-bold tracking-tight text-sm uppercase text-[#000340] dark:text-[#fbf9f8] opacity-80 hover:opacity-100 transition-opacity hover:scale-105 hover:text-[#3b6a11] hidden-lang" href="portfolio.html" data-lang="en">Portfolio</a>
+<a class="font-headline font-bold tracking-tight text-sm uppercase text-[#000340] dark:text-[#fbf9f8] opacity-80 hover:opacity-100 transition-opacity hover:scale-105 hover:text-[#3b6a11]" href="contact.html" data-lang="el">Επικοινωνία</a>
+<a class="font-headline font-bold tracking-tight text-sm uppercase text-[#000340] dark:text-[#fbf9f8] opacity-80 hover:opacity-100 transition-opacity hover:scale-105 hover:text-[#3b6a11] hidden-lang" href="contact.html" data-lang="en">Contact</a>
 </nav>
+<div class="flex items-center gap-4">
+<button id="lang-toggle" class="font-headline font-bold text-sm uppercase text-[#000340] dark:text-[#fbf9f8] px-4 py-2 rounded-full hover:bg-secondary/20 transition-colors">EN / EL</button>
+</div>
 </header>
 <main>
 <!-- Hero Introduction -->
 <section class="relative pt-32 pb-20 px-8 max-w-7xl mx-auto overflow-hidden">
 <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
 <div class="lg:col-span-7 z-10">
-<span class="inline-block px-4 py-1 rounded-full bg-secondary-container text-on-secondary-container font-bold text-xs uppercase tracking-widest mb-6">
+<span class="inline-block px-4 py-1 rounded-full bg-secondary-container text-on-secondary-container font-bold text-xs uppercase tracking-widest mb-6" data-lang="el">
+                        The Curated Canvas
+                    </span>
+<span class="inline-block px-4 py-1 rounded-full bg-secondary-container text-on-secondary-container font-bold text-xs uppercase tracking-widest mb-6 hidden-lang" data-lang="en">
                         The Curated Canvas
                     </span>
 <h1 class="text-6xl md:text-8xl font-headline font-black text-primary tracking-tighter leading-[0.9] mb-8">
-                        Τέχνη στην <br/> <span class="text-secondary">Οργάνωση.</span>
+                        <span data-lang="el">Τέχνη στην <br/> <span class="text-secondary">Οργάνωση.</span></span>
+                        <span data-lang="en" class="hidden-lang">Art in <br/> <span class="text-secondary">Organization.</span></span>
 </h1>
 <p class="text-xl md:text-2xl text-on-surface-variant max-w-xl leading-relaxed">
-                        Στην Venthus Artistry, μετατρέπουμε κάθε όραμα σε μια πολυδιάστατη εμπειρία. Από την οργάνωση εκδηλώσεων υψηλών προδιαγραφών μέχρι τη δημιουργία μοναδικών εταιρικών ταυτοτήτων.
+                        <span data-lang="el">Στην Venthus Artistry, μετατρέπουμε κάθε όραμα σε μια πολυδιάστατη εμπειρία. Από την οργάνωση εκδηλώσεων υψηλών προδιαγραφών μέχρι τη δημιουργία μοναδικών εταιρικών ταυτοτήτων.</span>
+                        <span data-lang="en" class="hidden-lang">At Venthus Artistry, we transform every vision into a multidimensional experience. From organizing premium events to creating unique corporate identities.</span>
                     </p>
 </div>
 <div class="lg:col-span-5 relative">
@@ -125,10 +139,12 @@
 <div class="flex flex-col md:flex-row gap-16 items-start">
 <div class="md:w-1/2 sticky top-32">
 <h2 class="text-4xl md:text-6xl font-headline font-bold text-primary mb-6 leading-tight">
-                            Οργάνωση <br/>Εκδηλώσεων
+                            <span data-lang="el">Οργάνωση <br/>Εκδηλώσεων</span>
+                            <span data-lang="en" class="hidden-lang">Event <br/>Organization</span>
                         </h2>
 <p class="text-lg text-on-surface-variant mb-10 leading-relaxed max-w-md">
-                            Δημιουργούμε στιγμές που μένουν ανεξίτηλες. Κάθε λεπτομέρεια είναι μια πινελιά στον καμβά της δικής σας μοναδικής ιστορίας.
+                            <span data-lang="el">Δημιουργούμε στιγμές που μένουν ανεξίτηλες. Κάθε λεπτομέρεια είναι μια πινελιά στον καμβά της δικής σας μοναδικής ιστορίας.</span>
+                            <span data-lang="en" class="hidden-lang">We create moments that remain unforgettable. Every detail is a brushstroke on the canvas of your unique story.</span>
                         </p>
 <div class="flex flex-col gap-4">
 <div class="flex items-center gap-4 group cursor-default">
@@ -297,8 +313,40 @@
 </div>
 </div>
 <div class="max-w-7xl mx-auto mt-20 pt-10 border-t border-white/5 flex flex-col md:flex-row justify-between items-center text-[#fbf9f8]/40">
-<p>© 2024 Venthus Artistry. All rights reserved.</p>
+<p data-lang="el">© 2024 Venthus Artistry. Όλα τα δικαιώματα διατηρούνται.</p>
+<p data-lang="en" class="hidden-lang">© 2024 Venthus Artistry. All rights reserved.</p>
 <p class="mt-4 md:mt-0">Athens, Greece — Global Reach</p>
 </div>
 </footer>
+
+<script>
+// Language Toggle Functionality
+const langToggle = document.getElementById('lang-toggle');
+let currentLang = localStorage.getItem('lang') || 'el';
+
+function applyLanguage(lang) {
+  const allLangs = document.querySelectorAll('[data-lang]');
+  allLangs.forEach(el => {
+    if (el.getAttribute('data-lang') === lang) {
+      el.classList.remove('hidden-lang');
+    } else {
+      el.classList.add('hidden-lang');
+    }
+  });
+  
+  localStorage.setItem('lang', lang);
+  currentLang = lang;
+  
+  // Update toggle button indicator
+  langToggle.textContent = lang === 'el' ? 'EN / EL' : 'EN / EL';
+}
+
+langToggle.addEventListener('click', () => {
+  const newLang = currentLang === 'el' ? 'en' : 'el';
+  applyLanguage(newLang);
+});
+
+// Apply saved language on page load
+applyLanguage(currentLang);
+</script>
 </body></html>
