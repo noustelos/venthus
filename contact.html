@@ -82,6 +82,8 @@
             backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px);
         }
+           .hidden-lang { display: none; }
+           .visible-lang { display: block; }
     </style>
 </head>
 <body class="bg-background text-on-background font-body selection:bg-tertiary-fixed selection:text-on-tertiary-fixed">
@@ -197,6 +199,32 @@
 </div>
 </section>
 </main>
+</body>
+<script>
+// Language Toggle Functionality
+const langToggle = document.getElementById('lang-toggle');
+let currentLang = localStorage.getItem('lang') || 'el';
+
+function applyLanguage(lang) {
+  const allLangs = document.querySelectorAll('[data-lang]');
+  allLangs.forEach(el => {
+    if (el.getAttribute('data-lang') === lang) {
+      el.classList.remove('hidden-lang');
+    } else {
+      el.classList.add('hidden-lang');
+    }
+  });
+  localStorage.setItem('lang', lang);
+  currentLang = lang;
+}
+
+langToggle.addEventListener('click', () => {
+  const newLang = currentLang === 'el' ? 'en' : 'el';
+  applyLanguage(newLang);
+});
+
+applyLanguage(currentLang);
+</script>
 <!-- Footer -->
 <footer class="bg-surface-container-lowest dark:bg-slate-900 w-full py-24 px-12 tonal-shift bg-surface-container-low">
 <div class="flex flex-col md:flex-row justify-between items-start w-full max-w-7xl mx-auto space-y-12 md:space-y-0">

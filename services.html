@@ -82,6 +82,8 @@
       h1, h2, h3, .font-headline {
         font-family: 'Epilogue', sans-serif;
       }
+       .hidden-lang { display: none; }
+       .visible-lang { display: block; }
     </style>
 </head>
 <body class="bg-surface text-on-surface">
@@ -201,6 +203,32 @@
 <div class="absolute -top-24 -left-24 w-96 h-96 bg-primary/40 blur-[120px] rounded-full"></div>
 </section>
 </main>
+</body>
+<script>
+// Language Toggle Functionality
+const langToggle = document.getElementById('lang-toggle');
+let currentLang = localStorage.getItem('lang') || 'el';
+
+function applyLanguage(lang) {
+  const allLangs = document.querySelectorAll('[data-lang]');
+  allLangs.forEach(el => {
+    if (el.getAttribute('data-lang') === lang) {
+      el.classList.remove('hidden-lang');
+    } else {
+      el.classList.add('hidden-lang');
+    }
+  });
+  localStorage.setItem('lang', lang);
+  currentLang = lang;
+}
+
+langToggle.addEventListener('click', () => {
+  const newLang = currentLang === 'el' ? 'en' : 'el';
+  applyLanguage(newLang);
+});
+
+applyLanguage(currentLang);
+</script>
 <!-- Footer -->
 <footer class="w-full pt-20 pb-10 px-12 bg-[#000340] dark:bg-[#000340]">
 <div class="grid grid-cols-1 md:grid-cols-4 gap-12 max-w-7xl mx-auto">
