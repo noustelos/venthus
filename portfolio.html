@@ -93,14 +93,17 @@
 </head>
 <body class="bg-surface text-on-surface selection:bg-secondary-container">
 <!-- Top Navigation Bar -->
-<header class="sticky top-4 mx-auto w-[95%] rounded-full px-6 py-3 z-50 bg-white/70 backdrop-blur-xl shadow-[0_20px_40px_rgba(0,3,64,0.06)] flex justify-between items-center max-w-7xl">
-<a class="text-2xl font-black tracking-widest text-[#000340]" href="index.html">Venthus</a>
-<nav class="hidden md:flex gap-8 items-center">
-<a class="font-['Epilogue'] font-bold tracking-tight text-sm uppercase text-[#000340] opacity-80 hover:opacity-100 transition-opacity hover:scale-105 hover:text-[#3b6a11] transition-all duration-300" href="index.html">Αρχική</a>
-<a class="font-['Epilogue'] font-bold tracking-tight text-sm uppercase text-[#000340] opacity-80 hover:opacity-100 transition-opacity hover:scale-105 hover:text-[#3b6a11] transition-all duration-300" href="services.html">Υπηρεσίες</a>
-<a class="font-['Epilogue'] font-bold tracking-tight text-sm uppercase text-[#3b6a11] font-extrabold border-b-2 border-[#3b6a11] pb-1 hover:scale-105 transition-all duration-300" href="portfolio.html">Portfolio</a>
-<a class="font-['Epilogue'] font-bold tracking-tight text-sm uppercase text-[#000340] opacity-80 hover:opacity-100 transition-opacity hover:scale-105 hover:text-[#3b6a11] transition-all duration-300" href="contact.html">Επικοινωνία</a>
+<header class="sticky top-4 mx-auto w-[95%] rounded-full px-6 py-3 z-50 bg-white/70 dark:bg-[#000340]/70 backdrop-blur-xl shadow-[0_20px_40px_rgba(0,3,64,0.06)] dark:shadow-none flex justify-between items-center max-w-7xl">
+<a class="text-2xl font-black tracking-widest text-[#000340] dark:text-[#fbf9f8] font-headline" href="index.html">Venthus</a>
+<nav class="hidden md:flex items-center space-x-8">
+<a class="font-headline font-bold tracking-tight text-sm uppercase text-[#000340] dark:text-[#fbf9f8] opacity-80 hover:opacity-100 transition-opacity hover:scale-105 hover:text-[#3b6a11]" href="index.html">Αρχική</a>
+<a class="font-headline font-bold tracking-tight text-sm uppercase text-[#000340] dark:text-[#fbf9f8] opacity-80 hover:opacity-100 transition-opacity hover:scale-105 hover:text-[#3b6a11]" href="services.html">Υπηρεσίες</a>
+<a class="font-headline font-bold tracking-tight text-sm uppercase text-[#3b6a11] dark:text-[#3b6a11] font-extrabold border-b-2 border-[#3b6a11] pb-1" href="portfolio.html">Portfolio</a>
+<a class="font-headline font-bold tracking-tight text-sm uppercase text-[#000340] dark:text-[#fbf9f8] opacity-80 hover:opacity-100 transition-opacity hover:scale-105 hover:text-[#3b6a11]" href="contact.html">Επικοινωνία</a>
 </nav>
+<div class="flex items-center gap-4">
+<button id="lang-toggle" class="font-headline font-bold text-sm uppercase text-[#000340] dark:text-[#fbf9f8] px-4 py-2 rounded-full hover:bg-secondary/20 transition-colors">EN / EL</button>
+</div>
 </header>
 <main class="min-h-screen">
 <!-- Hero & Contact Section -->
